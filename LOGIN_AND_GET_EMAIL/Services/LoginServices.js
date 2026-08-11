@@ -10,7 +10,7 @@ const registerServices = async (req, res) => {
     }
     const userExist = await knex(TableName)
       .withSchema(SchemaName)
-      .where({ email })
+      .where({ email,username })
       .first()
     if (userExist) {
       return res
